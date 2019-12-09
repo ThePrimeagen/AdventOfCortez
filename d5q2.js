@@ -17,12 +17,7 @@ let output = [];
 function getValue(ptr, offsetCount) {
     let value = input[ptr + offsetCount];
 
-    const offsetAmount = 10 ** (offsetCount - 1);
-    const extraArgs = ~~(input[ptr] / 100);
-    const high = ~~(extraArgs / offsetAmount);
-    const mode = high % (offsetAmount * 10);
-
-    if (mode === 0) {
+    if (~~(~~(input[ptr] / 100) / 10 ** (offsetCount - 1)) % (offsetAmount * 10)) {
         value = input[value];
     }
     output.push("  - getValue", offsetCount, mode, value, '\n');
