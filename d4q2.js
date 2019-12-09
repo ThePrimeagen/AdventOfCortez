@@ -43,3 +43,5 @@ for (let i = 248345; i < 746315; ++i) {
 }
 
 console.log(count);
+
+console.log('HE ALSO HAS SMALL HANDS')
